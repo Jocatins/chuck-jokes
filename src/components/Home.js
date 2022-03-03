@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./home.css";
 import axios from "axios";
 
-const chuckAllJokesUrl = "https://api.chucknorris.io/jokes/categories";
+const chuckAllJokesUrl = "https://api.chucknorris.io/jokes/search?query=all";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -18,22 +18,19 @@ const Home = () => {
       })
       .catch((err) => console.log(err));
   };
+
   return (
     <>
-      <div className="row">
-        <div className="column">
-          <div className="card">{data}</div>
-        </div>
-        <div className="column">
-          <div className="card">..</div>
-        </div>
-        <div className="column">
-          <div className="card">..</div>
-        </div>
-        <div className="column">
-          <div className="card">..</div>
-        </div>
-      </div>
+      <ul>
+        {data?.result?.map((item) => (
+          <li key={item.id}>{item.categories} </li>
+        ))}
+      </ul>
+      <ul>
+        {data?.result?.map((item) => (
+          <li key={item.id}>{item.value} </li>
+        ))}
+      </ul>
     </>
   );
 };

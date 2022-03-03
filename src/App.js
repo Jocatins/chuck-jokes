@@ -1,12 +1,20 @@
 import "./App.css";
-import Home from "./components/Home";
-import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./containers/Header";
+import JokeListing from "./containers/JokeListing";
+import JokeDetails from "./containers/JokeDetails";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Home style={{ marginTop: "6px" }} />
+    <div className="main">
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<JokeListing />} exact></Route>
+          <Route path="/joke/:jokeId" element={<JokeDetails />} exact></Route>
+          <Route>404 not found!!</Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
