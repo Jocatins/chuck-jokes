@@ -21,8 +21,7 @@ const JokeComponent = () => {
             </div>
             <div className="extra content">
               <div className="ui two buttons">
-                <div className="ui basic green button">Approve</div>
-                <div className="ui basic red button">Decline</div>
+                <div className="ui basic green button">Read More</div>
               </div>
             </div>
           </div>
@@ -39,8 +38,7 @@ const JokeComponent = () => {
             </div>
             <div className="extra content">
               <div className="ui two buttons">
-                <div className="ui basic green button">Approve</div>
-                <div className="ui basic red button">Decline</div>
+                <div className="ui basic green button">Read More</div>
               </div>
             </div>
           </div>
